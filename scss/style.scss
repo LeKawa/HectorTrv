@@ -1,0 +1,236 @@
+@font-face {
+  font-family: 'ubunturegular';
+  src: url("../font/Ubuntu-Regular.ttf");
+}
+@font-face {
+  font-family: 'ubuntubold';
+  src: url("../font/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: 'ubuntulight';
+  src: url("../font/Ubuntu-Light.ttf");
+}
+@font-face {
+  font-family: 'ubuntuMedium';
+  src: url("../font/Ubuntu-Medium.ttf");
+}
+$tablet-width: 768px;
+$color: rgb(random(150) ,random(150) ,random(150));
+$background_color: #fffef9;
+$desktop-width: 1024px;
+$text_content_title: #fb8d72;
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+.body-container {
+  background-color: $background_color;
+}
+
+.header-container {
+  height: 90px;
+  width: 100%;
+  background-color: $background_color;
+  position: fixed;
+  justify-content: space-between;
+  display: flex;
+  @include tablet {}
+  @include desktop {}
+
+  &-menu {
+    display: none;
+    @include desktop {
+      display: block;
+      width: 30%;
+      color: #895dda;
+      font-family: 'ubuntuMedium';
+      justify-content: space-around;
+    }
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 27px;
+      font-size: 14px;
+      margin-left: 70px;
+      letter-spacing: -1.5px;
+      color: black;
+      width: 70%;
+      @include desktop {
+        margin-right: 40px;
+      }
+
+      &-link {
+        overflow: hidden;
+      }
+
+      .opacity {
+        transition: background-color 0.3s linear, color 0.3s linear;
+        background: rgba(255,255,255,0);
+
+        &:hover {
+          color: #124a58;
+          background: rgba(255,255,255,0.9);
+        }
+      }
+
+      &-link {
+        transition: color 0.3s ease-out;
+
+        &::after {
+          width: 100%;
+          height: 100%;
+          display: block;
+          background-color: #895dda;
+          content: " ";
+          position: absolute;
+          top: 0;
+          transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transform: translateY(34px);
+          z-index: -1;
+        }
+
+        &:hover {
+          color: $background_color;
+
+          &::after {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+  }
+
+  &-logo {
+    width: 45px;
+    height: 45px;
+    margin-top: 22.5px;
+    margin-left: 10px;
+    @include tablet {}
+    @include desktop {
+      margin-left: 40px;
+    }
+
+    &-vrai {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  &-burger {
+    width: 45px;
+    height: 45px;
+    margin-top: 22.5px;
+    margin-right: 10px;
+    background-color: red;
+    @include tablet {
+      background-color: black;
+    }
+    @include desktop {
+      background-color: pink;
+      display: none;
+    }
+  }
+}
+
+.body-container {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  // partie gauche avec le texte//
+  &-left {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 90px;
+    @include desktop {
+      width: 100%;
+    }
+
+    &-up {
+      margin-top: 50px;
+      font-family: "ubuntubold";
+      font-size: 72px;
+      opacity: 0.05;
+      text-align: center;
+      letter-spacing: -2px;
+      width: 100%;
+      @include desktop {
+        font-size: 260px;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      left: 50%;
+      top: 80%;
+      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      margin: 0;
+
+      figure {
+        width: 200px;
+        height: 60px;
+        cursor: pointer;
+        perspective: 500px;
+        -webkit-perspective: 500px;
+      }
+
+      figure div {
+        height: 100%;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transition: 0.25s;
+        -webkit-transition: 0.25s;
+      }
+
+      figure:hover div {
+        transform: rotateX(-90deg);
+      }
+
+      span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        border: 5px solid #895dda;
+        font-family: "ubunturegular";
+        line-height: 50px;
+        font-size: 17pt;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      span:nth-child(1) {
+        color: #895dda;
+        transform: translate3d(0, 0, 30px);
+        -webkit-transform: translate3d(0, 0, 30px);
+      }
+
+      span:nth-child(2) {
+        color: $background_color ;
+        background: #895dda;
+        transform: rotateX(90deg) translate3d(0, 0, 30px);
+        -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);
+      }
+    }
+  }
+}
+// les liens dans le header
+
+.a {
+  width: 100px;
+  height: 34px;
+  line-height: 36px;
+  text-decoration: none;
+  color: #895dda;
+  text-align: center;
+  font-size: 15px;
+  position: relative;
+}
