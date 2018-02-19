@@ -17,12 +17,13 @@
       </a>
     </div>
     <div class="header-container-burger">
+      <div class="header-container-burger-button"></div>
       <div class="header-container-burger-modal">
         <div class="header-container-burger-modal-overlay"></div>
         <div class="header-container-burger-modal-content">
-            coucou
+          coucou
         </div>
-    </div>
+      </div>
     </div>
     <div class="header-container-menu">
       <div class="header-container-menu-text">
@@ -51,19 +52,19 @@
   </div>
   <script>
     //burger function / modal
-    var btn = document.querySelector('.header-container-burger');
-       var modal = document.querySelector('.header-container-burger-modal');
-       var overlay = document.querySelector('.header-container-burger-modal-overlay');
+    var btn = document.querySelector('.header-container-burger-button');
+    var modal = document.querySelector('.header-container-burger-modal');
+    var overlay = document.querySelector('.header-container-burger-modal-overlay');
 
-       btn.addEventListener('click', function() {
-        modal.style.display = 'block';
-       });
+    btn.addEventListener('click', function() {
+      modal.style.display = 'block';
+      console.log("bah non");
+    });
 
-       overlay.addEventListener('click', function() {
+    overlay.addEventListener('click', function() {
 
-           modal.style.display = 'none';
-           console.log("coucou");
-       });
-
+      modal.style.display = '';
+      console.log("coucou");
+    });
   </script>
 </body>
