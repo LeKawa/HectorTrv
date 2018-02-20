@@ -31,6 +31,7 @@ $text_content_title: #fb8d72;
 }
 
 .body-container {
+  overflow: hidden;
   background-color: $background_color;
 }
 
@@ -111,13 +112,14 @@ $text_content_title: #fb8d72;
   }
 
   &-logo {
-    width: 45px;
-    height: 45px;
-    margin-top: 22.5px;
-    margin-left: 10px;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'ubuntuMedium';
     @include tablet {}
     @include desktop {
-      margin-left: 40px;
+      font-size: 24px;
     }
 
     &-vrai {
@@ -139,6 +141,7 @@ $text_content_title: #fb8d72;
       background-color: pink;
       display: none;
     }
+
     &-modal {
       display: none;
       position: fixed;
@@ -157,6 +160,7 @@ $text_content_title: #fb8d72;
         height: 100%;
         background: rgba(0, 0, 0, 0.4);
       }
+
       &-content {
         width: 70%;
         height: 50vh;
@@ -187,23 +191,51 @@ $text_content_title: #fb8d72;
       width: 100%;
     }
 
-    &-up {
-      margin-top: 50px;
+    &-defile {
+      margin-top: 125px;
+      display: block;
       font-family: "ubuntubold";
       font-size: calc(100vw / 5);
       opacity: 0.05;
+      table-layout: fixed;
       text-align: center;
       letter-spacing: -2px;
-      width: 100%;
+      width: 100vw;
       @include desktop {
         z-index: 1;
       }
+      &-child {
+      display: flex;
+      -webkit-animation: linear marqueelike 3s infinite;
+      -moz-animation: linear marqueelike 3s infinite;
+      -o-animation: linear marqueelike 3s infinite;
+      -ms-animation: linear marqueelike 3s infinite;
+      animation: linear marqueelike 3s infinite;
+      margin-left: -100%;
+      padding: 0 5px;
+      text-align: left;
+      @include desktop {
+        -webkit-animation: linear marqueelike 8s infinite;
+        -moz-animation: linear marqueelike 8s infinite;
+        -o-animation: linear marqueelike 8s infinite;
+        -ms-animation: linear marqueelike 8s infinite;
+        animation: linear marqueelike 8s infinite;
+      }
+
+      &:after {
+        content: attr(data-text);
+        position: absolute;
+        white-space: nowrap;
+        padding-left: 10px;
+      }
+    }
     }
 
     &-text {
       position: absolute;
       left: 50%;
-      top: 80%;
+      top: 50%;
+
       transform: translate(-50%,-50%);
       -webkit-transform: translate(-50%,-50%);
       margin: 0;
@@ -236,6 +268,7 @@ $text_content_title: #fb8d72;
         border: 5px solid #895dda;
         font-family: "ubunturegular";
         line-height: 50px;
+        background-color: $background_color;
         font-size: 17pt;
         text-align: center;
         text-transform: uppercase;
@@ -276,4 +309,55 @@ $text_content_title: #fb8d72;
 
 
 
+
+@-webkit-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  99.99% {
+    margin-left: -100%;
+  }
+}
+@-moz-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  99.99% {
+    margin-left: -100%;
+  }
+}
+@-o-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  99.99% {
+    margin-left: -100%;
+  }
+}
+@-ms-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  99.99% {
+    margin-left: -100%;
+  }
+}
+@keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  99.99% {
+    margin-left: -100%;
+  }
+}
 // page about.html

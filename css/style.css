@@ -15,6 +15,7 @@
   src: url("../font/Ubuntu-Medium.ttf"); }
 
 .body-container {
+  overflow: hidden;
   background-color: #fffef9; }
 
 .header-container {
@@ -71,13 +72,14 @@
           .header-container-menu-text-link:hover::after {
             transform: translateY(0px); }
   .header-container-logo {
-    width: 45px;
-    height: 45px;
-    margin-top: 22.5px;
-    margin-left: 10px; }
+    width: 100%;
+    margin-top: 50px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'ubuntuMedium'; }
     @media (min-width: 1024px) {
       .header-container-logo {
-        margin-left: 40px; } }
+        font-size: 24px; } }
     .header-container-logo-vrai {
       width: 45px;
       height: 45px; }
@@ -132,21 +134,45 @@
     @media (min-width: 1024px) {
       .body-container-left {
         width: 100%; } }
-    .body-container-left-up {
-      margin-top: 50px;
+    .body-container-left-defile {
+      margin-top: 125px;
+      display: block;
       font-family: "ubuntubold";
       font-size: calc(100vw / 5);
       opacity: 0.05;
+      table-layout: fixed;
       text-align: center;
       letter-spacing: -2px;
-      width: 100%; }
+      width: 100vw; }
       @media (min-width: 1024px) {
-        .body-container-left-up {
+        .body-container-left-defile {
           z-index: 1; } }
+      .body-container-left-defile-child {
+        display: flex;
+        -webkit-animation: linear marqueelike 3s infinite;
+        -moz-animation: linear marqueelike 3s infinite;
+        -o-animation: linear marqueelike 3s infinite;
+        -ms-animation: linear marqueelike 3s infinite;
+        animation: linear marqueelike 3s infinite;
+        margin-left: -100%;
+        padding: 0 5px;
+        text-align: left; }
+        @media (min-width: 1024px) {
+          .body-container-left-defile-child {
+            -webkit-animation: linear marqueelike 8s infinite;
+            -moz-animation: linear marqueelike 8s infinite;
+            -o-animation: linear marqueelike 8s infinite;
+            -ms-animation: linear marqueelike 8s infinite;
+            animation: linear marqueelike 8s infinite; } }
+        .body-container-left-defile-child:after {
+          content: attr(data-text);
+          position: absolute;
+          white-space: nowrap;
+          padding-left: 10px; }
     .body-container-left-text {
       position: absolute;
       left: 50%;
-      top: 80%;
+      top: 50%;
       transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       margin: 0; }
@@ -172,6 +198,7 @@
         border: 5px solid #895dda;
         font-family: "ubunturegular";
         line-height: 50px;
+        background-color: #fffef9;
         font-size: 17pt;
         text-align: center;
         text-transform: uppercase; }
@@ -198,3 +225,38 @@
 .is-active {
   background-color: #895dda;
   color: #fffef9; }
+
+@-webkit-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0; }
+  99.99% {
+    margin-left: -100%; } }
+
+@-moz-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0; }
+  99.99% {
+    margin-left: -100%; } }
+
+@-o-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0; }
+  99.99% {
+    margin-left: -100%; } }
+
+@-ms-keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0; }
+  99.99% {
+    margin-left: -100%; } }
+
+@keyframes marqueelike {
+  0%,
+  100% {
+    margin-left: 0; }
+  99.99% {
+    margin-left: -100%; } }
