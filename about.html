@@ -13,20 +13,49 @@
 <body>
 
   <header class="header-container">
-    <div class="header-container-logo">
+    <div class="header-container-logo"> <a href="index.html">
       <img src="img/vrailogo.png" alt="" class="header-container-logo-vrai">
+      </a>
     </div>
     <div class="header-container-burger">
+      <div class="header-container-burger-button"></div>
+      <div class="header-container-burger-modal">
+        <div class="header-container-burger-modal-overlay"></div>
+        <div class="header-container-burger-modal-content">
+          coucou
+        </div>
+      </div>
     </div>
     <div class="header-container-menu">
       <div class="header-container-menu-text">
-        <a href="#" class="header-container-menu-text-link a is-active">About</a>
+        <a href="about.html" class="header-container-menu-text-link a">About</a>
         <a href="#" class="header-container-menu-text-link a">Works</a>
         <a href="#" class="header-container-menu-text-link a">Contact</a>
       </div>
     </div>
   </header>
+  <div class="body-container">
+    <div class="body-container-left">
+      <div class="body-container-left-up">
+        <h1 class="body-container-left-up-title">ABOUT</h1>
+      </div>
+    </div>
+  </div>
+  </div>
+
   <script>
-  
+    //burger function / modal
+    var btn = document.querySelector('.header-container-burger-button');
+    var modal = document.querySelector('.header-container-burger-modal');
+    var overlay = document.querySelector('.header-container-burger-modal-overlay');
+
+    btn.addEventListener('click', function() {
+      modal.style.display = 'block';
+    });
+
+    overlay.addEventListener('click', function() {
+
+      modal.style.display = '';
+    });
   </script>
 </body>
