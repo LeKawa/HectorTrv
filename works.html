@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <title></title>
+</head>
+
+<body>
+
+  <header class="header-container">
+    <div class="header-container-burger">
+      <div class="header-container-burger-button"></div>
+      <div class="header-container-burger-modal">
+        <div class="header-container-burger-modal-overlay"></div>
+        <div class="header-container-burger-modal-content">
+          coucou
+        </div>
+      </div>
+    </div>
+    <div class="header-container-menu">
+      <div class="header-container-menu-text">
+        <a href="about.html" class="header-container-menu-text-link a">ABOUT</a>
+        <a href="works.html" class="header-container-menu-text-link a is-active">WORKS</a>
+        <a href="#" class="header-container-menu-text-link a">CONTACT</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="about-container">
+    <div class="about-container-up">
+
+      <div class="body-container-left-defile">
+        <span class="body-container-left-defile-child" data-text="">
+            <p>WORKS. </p> <p>WORKS. </p> <p>WORKS. </p>
+      </span>
+      </div>
+      <p class="about-container-up-title">WORKS</p>
+    </div>
+    <div class="about-container-content">
+      <div class="about-container-content-presentation">
+        <p class="about-container-content-presentation-works">Voici mes projets personnel, j'essaie de toucher un peu à tout</p>
+      </div>
+    </div>
+
+    <footer class="footer-container">
+      <a href="https://twitter.com/LeKawa_" class="footer-container-link-img"><img src="img/twitter.svg" alt="" class="footer-container-link-img" ></a>
+      <a href="https://www.linkedin.com/in/hector-travaill%C3%A9-b45763153/" class="footer-container-link-img"><img src="img/linkedin.svg" alt="" class="footer-container-link-img" ></a>
+      <a href="https://twitter.com/LeKawa_" class="footer-container-link-img"><img src="img/instagram.svg" alt="" class="footer-container-link-img" ></a>
+    </footer>
+    <script>
+      //burger function / modal
+      var btn = document.querySelector('.header-container-burger-button');
+      var modal = document.querySelector('.header-container-burger-modal');
+      var overlay = document.querySelector('.header-container-burger-modal-overlay');
+
+      btn.addEventListener('click', function() {
+        modal.style.display = 'block';
+      });
+
+      overlay.addEventListener('click', function() {
+
+        modal.style.display = '';
+      });
+    </script>
+</body>
+
+</html>

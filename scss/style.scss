@@ -30,6 +30,10 @@ $text_content_title: #fb8d72;
   }
 }
 
+body {
+  background-color: $background_color;
+}
+
 .body-container {
   background-color: $background_color;
 }
@@ -162,7 +166,7 @@ $text_content_title: #fb8d72;
       &-content {
         width: 70%;
         height: 50vh;
-        margin: 10px auto;
+        margin: 100px auto;
         font-family: 'ubunturegular';
         text-align: center;
         background: $background_color;
@@ -233,7 +237,7 @@ $text_content_title: #fb8d72;
     &-text {
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 60%;
       transform: translate(-50%,-50%);
       -webkit-transform: translate(-50%,-50%);
       margin: 0;
@@ -367,27 +371,101 @@ $text_content_title: #fb8d72;
     @include desktop {
       width: 100%;
     }
+
     &-title {
       text-align: center;
-      font-size: 60px;
       font-family: 'ubuntubold';
       color: #895dda;
       width: 100%;
       bottom: 0;
-      top: 355px;
+      top: 270px;
+      font-size: 48px;
       position: absolute;
-      text-shadow: 0px 5px 2px rgba(150, 150, 150, 0.27);
-
-
+      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.27);
+      @include desktop {
+        font-size: 60px;
+        top: 450px;
+      }
     }
   }
-  &-content {
-    margin-top: 100px;
-    height: 900px;
-    box-shadow: 0px -7px 45px 0px rgba(0,0,0,0.11);
 
-    background-color: $background_color ;
-    width: 100%;
+  &-content {
+    height: 700px;
+    box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
+    background-color: $background_color;
+    width: 90%;
+    margin: 100px auto 0;
     z-index: 1000;
+
+    &-presentation {
+      margin: 0 auto;
+      width: 60%;
+      padding-top: 100px;
+      @include desktop {
+        width: 50%;
+        padding-top: 200px;
+      }
+
+      &-first {
+        font-size: 14px;
+        line-height: 120%;
+        font-family: 'ubunturegular';
+        @include desktop {
+          font-size: 18px;
+        }
+      }
+
+      &-second {
+        padding-top: 30px;
+        font-size: 14px;
+        line-height: 120%;
+        font-family: 'ubunturegular';
+        @include desktop {
+          font-size: 18px;
+        }
+
+        &-hetic {
+          font-family: 'ubuntubold';
+        }
+
+        &-profile {
+          width: 70%;
+          margin-left: 15%;
+          height: auto;
+          padding-top: 20px;
+          @include desktop {
+            padding-top: 40px;
+            margin-left: 15%;
+          }
+        }
+      }
+    }
   }
+}
+
+.footer-container {
+  width: 30%;
+  margin: 70px auto;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  @include desktop {
+    height: 50px;
+  }
+
+  &-link {
+    &-img {
+      height: 30px;
+      width: auto;
+      @include desktop {
+        height: 40px;
+        width: auto;
+      }
+    }
+  }
+}
+// works
+
+.about-container-content-presentation-works {
+  font-family: 'ubunturegular';
 }

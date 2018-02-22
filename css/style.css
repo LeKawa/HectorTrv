@@ -14,6 +14,9 @@
   font-family: 'ubuntuMedium';
   src: url("../font/Ubuntu-Medium.ttf"); }
 
+body {
+  background-color: #fffef9; }
+
 .body-container {
   background-color: #fffef9; }
 
@@ -113,7 +116,7 @@
       .header-container-burger-modal-content {
         width: 70%;
         height: 50vh;
-        margin: 10px auto;
+        margin: 100px auto;
         font-family: 'ubunturegular';
         text-align: center;
         background: #fffef9; }
@@ -170,7 +173,7 @@
     .body-container-left-text {
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 60%;
       transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       margin: 0; }
@@ -271,18 +274,76 @@
         width: 100%; } }
     .about-container-up-title {
       text-align: center;
-      font-size: 60px;
       font-family: 'ubuntubold';
       color: #895dda;
       width: 100%;
       bottom: 0;
-      top: 355px;
+      top: 270px;
+      font-size: 48px;
       position: absolute;
-      text-shadow: 0px 5px 2px rgba(150, 150, 150, 0.27); }
+      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.27); }
+      @media (min-width: 1024px) {
+        .about-container-up-title {
+          font-size: 60px;
+          top: 450px; } }
   .about-container-content {
-    margin-top: 100px;
-    height: 900px;
-    box-shadow: 0px -7px 45px 0px rgba(0, 0, 0, 0.11);
+    height: 700px;
+    box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
     background-color: #fffef9;
-    width: 100%;
+    width: 90%;
+    margin: 100px auto 0;
     z-index: 1000; }
+    .about-container-content-presentation {
+      margin: 0 auto;
+      width: 60%;
+      padding-top: 100px; }
+      @media (min-width: 1024px) {
+        .about-container-content-presentation {
+          width: 50%;
+          padding-top: 200px; } }
+      .about-container-content-presentation-first {
+        font-size: 14px;
+        line-height: 120%;
+        font-family: 'ubunturegular'; }
+        @media (min-width: 1024px) {
+          .about-container-content-presentation-first {
+            font-size: 18px; } }
+      .about-container-content-presentation-second {
+        padding-top: 30px;
+        font-size: 14px;
+        line-height: 120%;
+        font-family: 'ubunturegular'; }
+        @media (min-width: 1024px) {
+          .about-container-content-presentation-second {
+            font-size: 18px; } }
+        .about-container-content-presentation-second-hetic {
+          font-family: 'ubuntubold'; }
+        .about-container-content-presentation-second-profile {
+          width: 70%;
+          margin-left: 15%;
+          height: auto;
+          padding-top: 20px; }
+          @media (min-width: 1024px) {
+            .about-container-content-presentation-second-profile {
+              padding-top: 40px;
+              margin-left: 15%; } }
+
+.footer-container {
+  width: 30%;
+  margin: 70px auto;
+  height: 30px;
+  display: flex;
+  justify-content: space-around; }
+  @media (min-width: 1024px) {
+    .footer-container {
+      height: 50px; } }
+  .footer-container-link-img {
+    height: 30px;
+    width: auto; }
+    @media (min-width: 1024px) {
+      .footer-container-link-img {
+        height: 40px;
+        width: auto; } }
+
+.about-container-content-presentation-works {
+  font-family: 'ubunturegular'; }
