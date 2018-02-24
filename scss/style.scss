@@ -170,6 +170,7 @@ body {
         font-family: 'ubuntuMedium';
         text-align: center;
         background: $background_color;
+
         &-link {
           margin-top: 30px;
           margin-bottom: 10px;
@@ -412,10 +413,10 @@ body {
 
       &-first {
         font-size: 14px;
-        line-height: 120%;
+        line-height: 110%;
         font-family: 'ubunturegular';
         @include desktop {
-          font-size: 18px;
+          font-size: 17px;
         }
       }
 
@@ -425,7 +426,7 @@ body {
         line-height: 120%;
         font-family: 'ubunturegular';
         @include desktop {
-          font-size: 18px;
+          font-size: 17px;
         }
 
         &-hetic {
@@ -448,13 +449,14 @@ body {
 }
 
 .footer-container {
-  width: 30%;
+  width: 50%;
   margin: 70px auto;
   height: 30px;
   display: flex;
   justify-content: space-around;
   @include desktop {
     height: 50px;
+    width: 40%;
   }
 
   &-link {
@@ -521,8 +523,7 @@ body {
       &-img {
         width: 100%;
         height: auto;
-        box-shadow: 0px 10px 33px 0px rgba(0,0,0,0.53);
-
+        box-shadow: 0 10px 33px 0 rgba(0,0,0,0.53);
 
         &:hover {
           opacity: 0.8;
@@ -532,4 +533,32 @@ body {
       }
     }
   }
+}
+//contact
+
+.about-container-content-presentation-contact {
+  display: block;
+  padding-top: 100px;
+  width: 60%;
+  margin: 0 auto;
+  font-family: 'ubunturegular';
+
+  &-first {
+    margin-top: 20px;
+    font-size: 18px;
+
+    &-info {
+      font-family: 'ubuntuMedium';
+      font-size: 24px;
+    }
+  }
+}
+.about-container-content-contact {
+  height: 360px;
+  box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
+  background-color: $background_color;
+  width: 90%;
+  margin: 100px auto 0;
+  z-index: 1000;
+
 }

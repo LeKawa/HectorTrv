@@ -306,11 +306,11 @@ body {
           padding-top: 200px; } }
       .about-container-content-presentation-first {
         font-size: 14px;
-        line-height: 120%;
+        line-height: 110%;
         font-family: 'ubunturegular'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-first {
-            font-size: 18px; } }
+            font-size: 17px; } }
       .about-container-content-presentation-second {
         padding-top: 30px;
         font-size: 14px;
@@ -318,7 +318,7 @@ body {
         font-family: 'ubunturegular'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-second {
-            font-size: 18px; } }
+            font-size: 17px; } }
         .about-container-content-presentation-second-hetic {
           font-family: 'ubuntubold'; }
         .about-container-content-presentation-second-profile {
@@ -332,14 +332,15 @@ body {
               margin-left: 15%; } }
 
 .footer-container {
-  width: 30%;
+  width: 50%;
   margin: 70px auto;
   height: 30px;
   display: flex;
   justify-content: space-around; }
   @media (min-width: 1024px) {
     .footer-container {
-      height: 50px; } }
+      height: 50px;
+      width: 40%; } }
   .footer-container-link-img {
     height: 30px;
     width: auto; }
@@ -390,8 +391,29 @@ body {
       .about-container-content2-presentation-projects-img {
         width: 100%;
         height: auto;
-        box-shadow: 0px 10px 33px 0px rgba(0, 0, 0, 0.53); }
+        box-shadow: 0 10px 33px 0 rgba(0, 0, 0, 0.53); }
         .about-container-content2-presentation-projects-img:hover {
           opacity: 0.8;
           transform: scale(0.9);
           transition: all 0.2s ease-out; }
+
+.about-container-content-presentation-contact {
+  display: block;
+  padding-top: 100px;
+  width: 60%;
+  margin: 0 auto;
+  font-family: 'ubunturegular'; }
+  .about-container-content-presentation-contact-first {
+    margin-top: 20px;
+    font-size: 18px; }
+    .about-container-content-presentation-contact-first-info {
+      font-family: 'ubuntuMedium';
+      font-size: 24px; }
+
+.about-container-content-contact {
+  height: 360px;
+  box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
+  background-color: #fffef9;
+  width: 90%;
+  margin: 100px auto 0;
+  z-index: 1000; }
