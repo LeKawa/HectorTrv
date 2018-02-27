@@ -74,13 +74,15 @@ body {
     margin-top: 50px;
     font-size: 18px;
     text-align: center;
-    font-family: 'ubuntuMedium'; }
+    font-family: 'ubuntulight'; }
     @media (min-width: 768px) {
       .header-container-logo {
         font-size: 20px; } }
     @media (min-width: 1024px) {
       .header-container-logo {
         font-size: 24px; } }
+    .header-container-logo-regular {
+      font-family: 'ubunturegular'; }
     .header-container-logo-vrai {
       width: 45px;
       height: 45px; }
@@ -306,12 +308,12 @@ body {
           width: 50%;
           padding-top: 100px; } }
       .about-container-content-presentation-first {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 140%;
         font-family: 'ubuntulight'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-first {
-            font-size: 34px;
+            font-size: 30px;
             line-height: 140%; } }
         .about-container-content-presentation-first-underline {
           cursor: pointer;
@@ -362,7 +364,7 @@ body {
       margin-top: 500px; } }
   .about-container-content2-presentation {
     margin: 0 auto;
-    width: 60%;
+    width: 65%;
     padding-top: 70px; }
     @media (min-width: 1024px) {
       .about-container-content2-presentation {
@@ -377,6 +379,7 @@ body {
         .about-container-content2-presentation-title {
           font-size: 36px; } }
     .about-container-content2-presentation-works {
+      line-height: 120%;
       font-family: 'ubuntulight';
       font-size: 24px; }
       @media (min-width: 1024px) {
@@ -390,7 +393,8 @@ body {
       .about-container-content2-presentation-projects-link {
         background-color: #895dda;
         width: 100%;
-        height: auto; }
+        height: auto;
+        margin-top: 10px; }
         @media (min-width: 1024px) {
           .about-container-content2-presentation-projects-link {
             width: 50%; } }
@@ -411,11 +415,12 @@ body {
 .tabs-nav {
   font-family: 'ubuntulight';
   display: flex;
-  width: 80%;
+  width: 100%;
   margin: 100px auto;
   font-size: 20px; }
   @media (min-width: 1024px) {
     .tabs-nav {
+      width: 80%;
       font-size: 24px; } }
 
 .tabs-nav a {
@@ -425,9 +430,11 @@ body {
   width: 100%;
   letter-spacing: -1.5px;
   overflow: hidden;
-  height: 40px;
+  align-items: center;
+  height: 60px;
+  font-size: 24px;
   line-height: 40px;
-  border: 3.5px #895dda solid; }
+  border: 1px #895dda solid; }
 
 .tabs-nav a:hover {
   color: white;
@@ -471,9 +478,13 @@ body {
           font-size: 30px; } }
 
 .about-container-content-contact {
+  position: absolute;
   height: 360px;
   box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
   background-color: #fffef9;
-  width: 90%;
-  margin: 100px auto 0;
+  width: 100%;
+  margin-top: 300px;
   z-index: 1000; }
+  @media (min-width: 1024px) {
+    .about-container-content-contact {
+      margin-top: 500px; } }

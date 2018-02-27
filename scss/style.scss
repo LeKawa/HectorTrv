@@ -112,12 +112,15 @@ body {
     margin-top: 50px;
     font-size: 18px;
     text-align: center;
-    font-family: 'ubuntuMedium';
+    font-family: 'ubuntulight';
     @include tablet {
       font-size: 20px;
     }
     @include desktop {
       font-size: 24px;
+    }
+    &-regular {
+      font-family: 'ubunturegular';
     }
 
     &-vrai {
@@ -408,11 +411,11 @@ body {
       }
 
       &-first {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 140%;
         font-family: 'ubuntulight';
         @include desktop {
-          font-size: 34px;
+          font-size: 30px;
           line-height: 140%;
         }
 
@@ -485,7 +488,7 @@ body {
 
   &-presentation {
     margin: 0 auto;
-    width: 60%;
+    width: 65%;
     padding-top: 70px;
     @include desktop {
       width: 50%;
@@ -503,6 +506,7 @@ body {
     }
 
     &-works {
+      line-height: 120%;
       font-family: 'ubuntulight';
       font-size: 24px;
       @include desktop {
@@ -520,6 +524,7 @@ body {
         background-color: #895dda;
         width: 100%;
         height: auto;
+        margin-top: 10px;
         @include desktop {
           width: 50%;
         }
@@ -549,10 +554,11 @@ body {
 .tabs-nav {
   font-family: 'ubuntulight';
   display: flex;
-  width: 80%;
+  width: 100%;
   margin: 100px auto;
   font-size: 20px;
   @include desktop {
+    width: 80%;
     font-size: 24px;
   }
 }
@@ -564,9 +570,11 @@ body {
   width: 100%;
   letter-spacing: -1.5px;
   overflow: hidden;
-  height: 40px;
+  align-items: center;
+  height: 60px;
+  font-size: 24px;
   line-height: 40px;
-  border: 3.5px #895dda solid;
+  border: 1px #895dda solid;
 }
 
 .tabs-nav a:hover {
@@ -621,10 +629,14 @@ body {
 }
 
 .about-container-content-contact {
+  position: absolute;
   height: 360px;
   box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
   background-color: $background_color;
-  width: 90%;
-  margin: 100px auto 0;
+  width: 100%;
+  margin-top: 300px;
   z-index: 1000;
+  @include desktop {
+    margin-top: 500px;
+  }
 }
