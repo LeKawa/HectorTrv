@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reset.css">
-    <link rel="icon" href="img/vrailogo.png"/>
-  <title>HectorTrv</title>
+  <link rel="icon" href="img/vrailogo.png" />
+  <title>Hector Travaillé</title>
 </head>
 
 <body>
@@ -20,13 +20,19 @@
         <div class="header-container-burger-modal-overlay"></div>
         <div class="header-container-burger-modal-content">
           <div class="header-container-burger-modal-content-link">
-            <a href="about.html"><p>ABOUT</p></a>
+            <a href="about.html">
+              <p>ABOUT</p>
+            </a>
           </div>
           <div class="header-container-burger-modal-content-link">
-            <a href="works.html"><p>WORKS</p></a>
+            <a href="works.html">
+              <p>WORKS</p>
+            </a>
           </div>
           <div class="header-container-burger-modal-content-link">
-            <a href="contact.html"><p>CONTACT</p></a>
+            <a href="contact.html">
+              <p>CONTACT</p>
+            </a>
           </div>
         </div>
       </div>
@@ -52,33 +58,44 @@
     </div>
     <div class="about-container-content2">
       <div class="about-container-content2-presentation">
-        <p class="about-container-content2-presentation-works">Here is a bunch of projects i did like Redesign or 3d :  </p>
+        <p class="about-container-content2-presentation-works">I try to create things, not only in UX / UI design it can photography or Minecraft, when i just : </p>
       </div>
-      <div class="about-container-content2-presentation-projects">
-        <div class="about-container-content2-presentation-projects-link">
-          <a href="#" class=""><img src="img/egypte.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
-        </div>
-        <div class="about-container-content2-presentation-projects-link">
-          <a href="#" class=""><img src="img/sciende.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
-        </div>
-        <div class="about-container-content2-presentation-projects-link">
-          <a href="#" class=""><img src="img/homepage1.png" class="about-container-content2-presentation-projects-img" alt=""></a>
-        </div>
-        <div class="about-container-content2-presentation-projects-link">
-          <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
-        </div>
-        <div class="about-container-content2-presentation-projects-link">
-          <a href="#" class=""><img src="img/sciende.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
-        </div>
+      <nav class="tabs-nav ">
+        <a href="#page1" class="is-active ">UX / UI</a>
+        <a href="#page2">3d </a>
+        <a href="#page3">Other</a>
+      </nav>
+      <div class="tabs-contents">
+        <article id="page1" class="tabs-content is-active">
+          <div class="about-container-content2-presentation-projects-link">
+            <a href="#" class=""><img src="img/homepage1.png" class="about-container-content2-presentation-projects-img" alt=""></a>
+          </div>
+          <div class="about-container-content2-presentation-projects-link">
+            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          </div>
+          <div class="about-container-content2-presentation-projects-link">
+            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          </div>
+        </article>
+
+        <article id="page2" class="tabs-content">
+          <div class="about-container-content2-presentation-projects-link">
+            <a href="#" class=""><img src="img/egypte.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          </div>
+          <div class="about-container-content2-presentation-projects-link">
+            <a href="#" class=""><img src="img/sciende.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          </div>
+        </article>
+
+        <article id="page3" class="tabs-content">
+          <div class="about-container-content2-presentation-projects-link">
+            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          </div>
+        </article>
+
 
       </div>
     </div>
-
-    <footer class="footer-container">
-      <a href="https://twitter.com/LeKawa_" class="footer-container-link-img"><img src="img/twitter.svg" alt="" class="footer-container-link-img" ></a>
-      <a href="https://www.linkedin.com/in/hector-travaill%C3%A9-b45763153/" class="footer-container-link-img"><img src="img/linkedin.svg" alt="" class="footer-container-link-img" ></a>
-      <a href="https://www.instagram.com/hectororor/_" class="footer-container-link-img"><img src="img/instagram.svg" alt="" class="footer-container-link-img" ></a>
-    </footer>
     <script>
       //burger function / modal
       var btn = document.querySelector('.header-container-burger-button');
@@ -93,6 +110,34 @@
 
         modal.style.display = '';
       });
+      ///
+      var tab = document.querySelectorAll('.tabs-nav a');
+      var content = document.querySelectorAll('.tabs-content');
+
+      for (var i = 0; i < tab.length; i++) {
+        tab[i].addEventListener('click', function() {
+
+          for (var a = 0; a < tab.length; a++) {
+            if (tab[a] === this) {
+              this.classList.add('is-active');
+            } else {
+              tab[a].classList.remove('is-active');
+            }
+          }
+
+          for (var a = 0; a < content.length; a++) {
+            var href = this.getAttribute('href');
+            href = href.replace('#', '');
+
+            if (href === content[a].getAttribute('id')) {
+              content[a].classList.add('is-active');
+            } else {
+              content[a].classList.remove('is-active');
+            }
+          }
+
+        });
+      }
     </script>
 </body>
 

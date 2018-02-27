@@ -18,9 +18,9 @@
   font-family: 'ubuntuitalic';
   src: url("../font/Ubuntu-Italic.ttf");
 }
-$tablet-width: 768px;
 $color: rgb(random(150) ,random(150) ,random(150));
 $background_color: #fffef9;
+$tablet-width: 768px;
 $desktop-width: 1024px;
 $text_content_title: #fb8d72;
 @mixin tablet {
@@ -43,6 +43,7 @@ body {
 }
 
 .header-container {
+  z-index: 500000;
   height: 90px;
   width: 100%;
   background-color: $background_color;
@@ -77,16 +78,6 @@ body {
 
       &-link {
         overflow: hidden;
-      }
-
-      .opacity {
-        transition: background-color 0.3s linear, color 0.3s linear;
-        background: rgba(255,255,255,0);
-
-        &:hover {
-          color: #124a58;
-          background: rgba(255,255,255,0.9);
-        }
       }
 
       &-link {
@@ -151,10 +142,8 @@ body {
     &-modal {
       display: none;
       position: fixed;
-      top: 0;
       z-index: 10000;
-      left: 0;
-      width: 100%;
+      width: 80%;
       height: 100%;
 
       &-overlay {
@@ -168,9 +157,8 @@ body {
       }
 
       &-content {
-        width: 70%;
         height: 50vh;
-        margin: 100px auto;
+        margin: 0 auto;
         font-family: 'ubuntuMedium';
         text-align: center;
         background: $background_color;
@@ -203,26 +191,26 @@ body {
     }
 
     &-defile {
+      position: fixed;
       margin-top: 125px;
       display: block;
       font-family: "ubuntubold";
       font-size: calc(100vw / 5);
       opacity: 0.05;
-      table-layout: fixed;
       text-align: center;
       letter-spacing: -2px;
       width: 100vw;
-      @include desktop {
-        z-index: 1;
-      }
+      z-index: 0;
+      @include desktop {}
 
       &-child {
+        z-index: 1;
         display: flex;
-        -webkit-animation: linear marqueelike 3s infinite;
-        -moz-animation: linear marqueelike 3s infinite;
-        -o-animation: linear marqueelike 3s infinite;
-        -ms-animation: linear marqueelike 3s infinite;
-        animation: linear marqueelike 3s infinite;
+        -webkit-animation: linear marqueelike 5s infinite;
+        -moz-animation: linear marqueelike 5s infinite;
+        -o-animation: linear marqueelike 5s infinite;
+        -ms-animation: linear marqueelike 5s infinite;
+        animation: linear marqueelike 5s infinite;
         margin-left: -100%;
         padding: 0 5px;
         text-align: left;
@@ -232,13 +220,6 @@ body {
           -o-animation: linear marqueelike 8s infinite;
           -ms-animation: linear marqueelike 8s infinite;
           animation: linear marqueelike 8s infinite;
-        }
-
-        &:after {
-          content: attr(data-text);
-          position: absolute;
-          white-space: nowrap;
-          padding-left: 10px;
         }
       }
     }
@@ -379,6 +360,7 @@ body {
     overflow: hidden;
     @include desktop {
       width: 100%;
+      z-index: 1;
     }
 
     &-title {
@@ -389,24 +371,30 @@ body {
       bottom: 0;
       top: 270px;
       font-size: 48px;
+      z-index: 3000;
       position: absolute;
-      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.27);
+      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.17);
       @include desktop {
         font-size: 60px;
+        z-index: 3000;
         top: 450px;
       }
     }
   }
 
   &-content {
-    height: 560px;
-    box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
+    position: absolute;
+    height: 880px;
+    box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.09);
     background-color: $background_color;
-    width: 90%;
-    margin: 100px auto 0;
+    width: 100%;
+    margin-top: 300px;
+    opacity: 1;
     z-index: 1000;
     @include desktop {
-      height: 760px;
+      margin-top: 500px;
+      z-index: 3;
+      height: 1040px;
     }
 
     &-presentation {
@@ -420,38 +408,48 @@ body {
       }
 
       &-first {
-        font-size: 14px;
-        line-height: 130%;
-        font-family: 'ubunturegular';
+        font-size: 28px;
+        line-height: 140%;
+        font-family: 'ubuntulight';
         @include desktop {
-          font-size: 17px;
+          font-size: 34px;
           line-height: 140%;
+        }
+
+        &-underline {
+          cursor: pointer;
+          text-decoration: underline black;
+          transition: all 0.1s ease-out;
+
+          &:hover {
+            text-decoration: underline #895dda;
+          }
         }
 
         &-italic {
           font-family: 'ubuntuitalic';
         }
+
         &-italic2 {
           font-family: 'ubuntuitalic';
           font-size: 18px;
           @include desktop {
             font-size: 20px;
           }
-
         }
       }
 
       &-second {
         padding-top: 30px;
-        font-size: 14px;
+        font-size: 24px;
         line-height: 130%;
-        font-family: 'ubunturegular';
+        font-family: 'ubuntulight';
         @include desktop {
-          font-size: 17px;
+          font-size: 30px;
         }
 
         &-hetic {
-          font-family: 'ubuntubold';
+          font-family: 'ubunturegular';
         }
 
         &-profile {
@@ -469,44 +467,20 @@ body {
   }
 }
 
-.footer-container {
-  width: 50%;
-  margin: 70px auto;
-  height: 30px;
-  display: flex;
-  justify-content: space-around;
-  @include desktop {
-    height: 50px;
-    width: 40%;
-  }
-
-  &-link {
-    &-img {
-      height: 30px;
-      width: auto;
-      @include desktop {
-        height: 40px;
-        width: auto;
-      }
-
-      &:hover {
-        transition: all 0.2s ease-out;
-        opacity: 0.9;
-      }
-    }
-  }
-}
 // works
 
 .about-container-content2 {
   height: 900px;
+  position: absolute;
   box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
   background-color: $background_color;
-  width: 90%;
+  width: 100%;
   margin: 100px auto 0;
-  z-index: 1000;
+  z-index: 10;
+  margin-top: 300px;
   @include desktop {
-    height: 2500px;
+    height: 1400px;
+    margin-top: 500px;
   }
 
   &-presentation {
@@ -518,26 +492,36 @@ body {
       padding-top: 200px;
     }
 
-    &-works {
+    &-title {
       font-family: 'ubunturegular';
-      font-size: 14px;
+      font-size: 30px;
+      text-align: center;
+      margin-top: 30px;
       @include desktop {
-        font-size: 18px;
+        font-size: 36px;
+      }
+    }
+
+    &-works {
+      font-family: 'ubuntulight';
+      font-size: 24px;
+      @include desktop {
+        font-size: 30px;
       }
     }
 
     &-projects {
-      width: 60%;
-      margin: 50px auto;
+      width: 100%;
+      margin-top: 50px;
       flex-wrap: wrap;
+      display: flex;
 
       &-link {
         background-color: #895dda;
         width: 100%;
-        margin-top: 20px;
         height: auto;
         @include desktop {
-          margin-top: 60px;
+          width: 50%;
         }
       }
 
@@ -545,15 +529,66 @@ body {
         width: 100%;
         height: auto;
         box-shadow: 0 10px 33px 0 rgba(0,0,0,0.53);
+        transition: all 0.2s ease-out;
 
         &:hover {
           opacity: 0.8;
           transform: scale(0.9);
-          transition: all 0.2s ease-out;
         }
       }
     }
   }
+}
+
+.tabs {
+  width: 100%;
+  margin: auto;
+  border: 1px solid #000;
+}
+
+.tabs-nav {
+  font-family: 'ubuntulight';
+  display: flex;
+  width: 80%;
+  margin: 100px auto;
+  font-size: 20px;
+  @include desktop {
+    font-size: 24px;
+  }
+}
+
+.tabs-nav a {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  letter-spacing: -1.5px;
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  border: 3.5px #895dda solid;
+}
+
+.tabs-nav a:hover {
+  color: white;
+  transition: all 0.2s ease-out;
+  background-color: #895dda;
+}
+
+.tabs-nav a.is-active {
+  color: white;
+  font-family: 'ubunturegular';
+  background: #895dda;
+}
+
+.tabs-content {
+  display: none;
+}
+
+.tabs-content.is-active {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
 }
 //contact
 
@@ -569,16 +604,17 @@ body {
 
   &-first {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 20px;
+    font-family: 'ubuntulight';
     @include desktop {
-      font-size: 24px;
+      font-size: 28px;
     }
 
     &-info {
-      font-family: 'ubuntuMedium';
-      font-size: 18px;
+      font-family: 'ubunturegular';
+      font-size: 24px;
       @include desktop {
-        font-size: 24px;
+        font-size: 30px;
       }
     }
   }

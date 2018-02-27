@@ -25,6 +25,7 @@ body {
   background-color: #fffef9; }
 
 .header-container {
+  z-index: 500000;
   height: 90px;
   width: 100%;
   background-color: #fffef9;
@@ -51,12 +52,6 @@ body {
       width: 70%; }
       .header-container-menu-text-link {
         overflow: hidden; }
-      .header-container-menu-text .opacity {
-        transition: background-color 0.3s linear, color 0.3s linear;
-        background: rgba(255, 255, 255, 0); }
-        .header-container-menu-text .opacity:hover {
-          color: #124a58;
-          background: rgba(255, 255, 255, 0.9); }
       .header-container-menu-text-link {
         transition: color 0.3s ease-out; }
         .header-container-menu-text-link::after {
@@ -104,10 +99,8 @@ body {
     .header-container-burger-modal {
       display: none;
       position: fixed;
-      top: 0;
       z-index: 10000;
-      left: 0;
-      width: 100%;
+      width: 80%;
       height: 100%; }
       .header-container-burger-modal-overlay {
         position: fixed;
@@ -118,9 +111,8 @@ body {
         height: 100%;
         background: rgba(0, 0, 0, 0.4); }
       .header-container-burger-modal-content {
-        width: 70%;
         height: 50vh;
-        margin: 100px auto;
+        margin: 0 auto;
         font-family: 'ubuntuMedium';
         text-align: center;
         background: #fffef9; }
@@ -143,25 +135,24 @@ body {
       .body-container-left {
         width: 100%; } }
     .body-container-left-defile {
+      position: fixed;
       margin-top: 125px;
       display: block;
       font-family: "ubuntubold";
       font-size: calc(100vw / 5);
       opacity: 0.05;
-      table-layout: fixed;
       text-align: center;
       letter-spacing: -2px;
-      width: 100vw; }
-      @media (min-width: 1024px) {
-        .body-container-left-defile {
-          z-index: 1; } }
+      width: 100vw;
+      z-index: 0; }
       .body-container-left-defile-child {
+        z-index: 1;
         display: flex;
-        -webkit-animation: linear marqueelike 3s infinite;
-        -moz-animation: linear marqueelike 3s infinite;
-        -o-animation: linear marqueelike 3s infinite;
-        -ms-animation: linear marqueelike 3s infinite;
-        animation: linear marqueelike 3s infinite;
+        -webkit-animation: linear marqueelike 5s infinite;
+        -moz-animation: linear marqueelike 5s infinite;
+        -o-animation: linear marqueelike 5s infinite;
+        -ms-animation: linear marqueelike 5s infinite;
+        animation: linear marqueelike 5s infinite;
         margin-left: -100%;
         padding: 0 5px;
         text-align: left; }
@@ -172,11 +163,6 @@ body {
             -o-animation: linear marqueelike 8s infinite;
             -ms-animation: linear marqueelike 8s infinite;
             animation: linear marqueelike 8s infinite; } }
-        .body-container-left-defile-child:after {
-          content: attr(data-text);
-          position: absolute;
-          white-space: nowrap;
-          padding-left: 10px; }
     .body-container-left-text {
       position: absolute;
       left: 50%;
@@ -278,7 +264,8 @@ body {
     overflow: hidden; }
     @media (min-width: 1024px) {
       .about-container-up {
-        width: 100%; } }
+        width: 100%;
+        z-index: 1; } }
     .about-container-up-title {
       text-align: center;
       font-family: 'ubuntubold';
@@ -287,22 +274,28 @@ body {
       bottom: 0;
       top: 270px;
       font-size: 48px;
+      z-index: 3000;
       position: absolute;
-      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.27); }
+      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.17); }
       @media (min-width: 1024px) {
         .about-container-up-title {
           font-size: 60px;
+          z-index: 3000;
           top: 450px; } }
   .about-container-content {
-    height: 560px;
-    box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
+    position: absolute;
+    height: 880px;
+    box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.09);
     background-color: #fffef9;
-    width: 90%;
-    margin: 100px auto 0;
+    width: 100%;
+    margin-top: 300px;
+    opacity: 1;
     z-index: 1000; }
     @media (min-width: 1024px) {
       .about-container-content {
-        height: 760px; } }
+        margin-top: 500px;
+        z-index: 3;
+        height: 1040px; } }
     .about-container-content-presentation {
       margin: 0 auto;
       line-height: 120%;
@@ -313,13 +306,19 @@ body {
           width: 50%;
           padding-top: 100px; } }
       .about-container-content-presentation-first {
-        font-size: 14px;
-        line-height: 130%;
-        font-family: 'ubunturegular'; }
+        font-size: 28px;
+        line-height: 140%;
+        font-family: 'ubuntulight'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-first {
-            font-size: 17px;
+            font-size: 34px;
             line-height: 140%; } }
+        .about-container-content-presentation-first-underline {
+          cursor: pointer;
+          text-decoration: underline black;
+          transition: all 0.1s ease-out; }
+          .about-container-content-presentation-first-underline:hover {
+            text-decoration: underline #895dda; }
         .about-container-content-presentation-first-italic {
           font-family: 'ubuntuitalic'; }
         .about-container-content-presentation-first-italic2 {
@@ -330,14 +329,14 @@ body {
               font-size: 20px; } }
       .about-container-content-presentation-second {
         padding-top: 30px;
-        font-size: 14px;
+        font-size: 24px;
         line-height: 130%;
-        font-family: 'ubunturegular'; }
+        font-family: 'ubuntulight'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-second {
-            font-size: 17px; } }
+            font-size: 30px; } }
         .about-container-content-presentation-second-hetic {
-          font-family: 'ubuntubold'; }
+          font-family: 'ubunturegular'; }
         .about-container-content-presentation-second-profile {
           width: 70%;
           margin-left: 15%;
@@ -348,37 +347,19 @@ body {
               padding-top: 40px;
               margin-left: 15%; } }
 
-.footer-container {
-  width: 50%;
-  margin: 70px auto;
-  height: 30px;
-  display: flex;
-  justify-content: space-around; }
-  @media (min-width: 1024px) {
-    .footer-container {
-      height: 50px;
-      width: 40%; } }
-  .footer-container-link-img {
-    height: 30px;
-    width: auto; }
-    @media (min-width: 1024px) {
-      .footer-container-link-img {
-        height: 40px;
-        width: auto; } }
-    .footer-container-link-img:hover {
-      transition: all 0.2s ease-out;
-      opacity: 0.9; }
-
 .about-container-content2 {
   height: 900px;
+  position: absolute;
   box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
   background-color: #fffef9;
-  width: 90%;
+  width: 100%;
   margin: 100px auto 0;
-  z-index: 1000; }
+  z-index: 10;
+  margin-top: 300px; }
   @media (min-width: 1024px) {
     .about-container-content2 {
-      height: 2500px; } }
+      height: 1400px;
+      margin-top: 500px; } }
   .about-container-content2-presentation {
     margin: 0 auto;
     width: 60%;
@@ -387,32 +368,84 @@ body {
       .about-container-content2-presentation {
         width: 50%;
         padding-top: 200px; } }
-    .about-container-content2-presentation-works {
+    .about-container-content2-presentation-title {
       font-family: 'ubunturegular';
-      font-size: 14px; }
+      font-size: 30px;
+      text-align: center;
+      margin-top: 30px; }
+      @media (min-width: 1024px) {
+        .about-container-content2-presentation-title {
+          font-size: 36px; } }
+    .about-container-content2-presentation-works {
+      font-family: 'ubuntulight';
+      font-size: 24px; }
       @media (min-width: 1024px) {
         .about-container-content2-presentation-works {
-          font-size: 18px; } }
+          font-size: 30px; } }
     .about-container-content2-presentation-projects {
-      width: 60%;
-      margin: 50px auto;
-      flex-wrap: wrap; }
+      width: 100%;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      display: flex; }
       .about-container-content2-presentation-projects-link {
         background-color: #895dda;
         width: 100%;
-        margin-top: 20px;
         height: auto; }
         @media (min-width: 1024px) {
           .about-container-content2-presentation-projects-link {
-            margin-top: 60px; } }
+            width: 50%; } }
       .about-container-content2-presentation-projects-img {
         width: 100%;
         height: auto;
-        box-shadow: 0 10px 33px 0 rgba(0, 0, 0, 0.53); }
+        box-shadow: 0 10px 33px 0 rgba(0, 0, 0, 0.53);
+        transition: all 0.2s ease-out; }
         .about-container-content2-presentation-projects-img:hover {
           opacity: 0.8;
-          transform: scale(0.9);
-          transition: all 0.2s ease-out; }
+          transform: scale(0.9); }
+
+.tabs {
+  width: 100%;
+  margin: auto;
+  border: 1px solid #000; }
+
+.tabs-nav {
+  font-family: 'ubuntulight';
+  display: flex;
+  width: 80%;
+  margin: 100px auto;
+  font-size: 20px; }
+  @media (min-width: 1024px) {
+    .tabs-nav {
+      font-size: 24px; } }
+
+.tabs-nav a {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  letter-spacing: -1.5px;
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  border: 3.5px #895dda solid; }
+
+.tabs-nav a:hover {
+  color: white;
+  transition: all 0.2s ease-out;
+  background-color: #895dda; }
+
+.tabs-nav a.is-active {
+  color: white;
+  font-family: 'ubunturegular';
+  background: #895dda; }
+
+.tabs-content {
+  display: none; }
+
+.tabs-content.is-active {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap; }
 
 .about-container-content-presentation-contact {
   display: block;
@@ -425,16 +458,17 @@ body {
       width: 60%; } }
   .about-container-content-presentation-contact-first {
     margin-top: 20px;
-    font-size: 14px; }
+    font-size: 20px;
+    font-family: 'ubuntulight'; }
     @media (min-width: 1024px) {
       .about-container-content-presentation-contact-first {
-        font-size: 24px; } }
+        font-size: 28px; } }
     .about-container-content-presentation-contact-first-info {
-      font-family: 'ubuntuMedium';
-      font-size: 18px; }
+      font-family: 'ubunturegular';
+      font-size: 24px; }
       @media (min-width: 1024px) {
         .about-container-content-presentation-contact-first-info {
-          font-size: 24px; } }
+          font-size: 30px; } }
 
 .about-container-content-contact {
   height: 360px;
