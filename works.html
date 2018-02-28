@@ -54,9 +54,9 @@
             <p>WORKS. </p> <p>WORKS. </p> <p>WORKS. </p>
       </span>
       </div>
-      <p class="about-container-up-title">WORKS</p>
     </div>
-    <div class="about-container-content2">
+    <div class="about-container-content2" id="content">
+      <p class="about-container-up-title" id="title">WORKS</p>
       <div class="about-container-content2-presentation">
         <p class="about-container-content2-presentation-works">I try to create things, not only in UX / UI design it can photography or Minecraft, when i just : </p>
       </div>
@@ -113,7 +113,7 @@
 
         modal.style.display = '';
       });
-      ///
+      /// ONGLETS
       var tab = document.querySelectorAll('.tabs-nav a');
       var content = document.querySelectorAll('.tabs-content');
 
@@ -141,6 +141,31 @@
 
         });
       }
+
+      /// PARRALAX
+      window.requestAnimationFrame = window.requestAnimationFrame
+      || window.mozRequestAnimationFrame
+      || window.webkitRequestAnimationFrame
+      || window.msRequestAnimationFrame
+      || function(f){setTimeout(f, 1000/60)}
+
+      var bubble5 = document.getElementById('content')
+      var bubble6 = document.getElementById('title')
+
+      var rand6 = 15;
+
+      function parallaxbubbles(){
+
+      var scrolltop = window.pageYOffset
+
+
+      bubble6.style.top = -scrolltop*rand6/100 + 'px'
+
+      }
+
+      window.addEventListener('scroll', function(){
+      requestAnimationFrame(parallaxbubbles)
+      }, false)
     </script>
 </body>
 

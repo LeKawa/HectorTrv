@@ -53,9 +53,9 @@
             <p>ABOUT. </p> <p>ABOUT. </p> <p>ABOUT. </p>
       </span>
       </div>
-      <p class="about-container-up-title">ABOUT</p>
     </div>
     <div class="about-container-content">
+      <p class="about-container-up-title" id="title">ABOUT</p>
       <div class="about-container-content-presentation">
         <p class="about-container-content-presentation-first">- Hey, Welcome in my website, I'm Hector Travaillé, I am 19 years old a young <span class="about-container-content-presentation-first-underline">Creative Developper</span> 👦 . I always wanted to work in the <span class="about-container-content-presentation-first-italic">" World wide web "</span>.</p>
         <p class="about-container-content-presentation-second">- I've seen a lot of ways to create content and for me UX / UI Design is for me the best way to express myself. </p>
@@ -83,6 +83,29 @@
     });
 
     // parralax
+    /// PARRALAX
+    window.requestAnimationFrame = window.requestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.msRequestAnimationFrame
+    || function(f){setTimeout(f, 1000/60)}
 
+    var bubble5 = document.getElementById('content')
+    var bubble6 = document.getElementById('title')
+
+    var rand6 = 15;
+
+    function parallaxbubbles(){
+
+    var scrolltop = window.pageYOffset
+
+
+    bubble6.style.top = -scrolltop*rand6/100 + 'px'
+
+    }
+
+    window.addEventListener('scroll', function(){
+    requestAnimationFrame(parallaxbubbles)
+    }, false)
   </script>
 </body>
