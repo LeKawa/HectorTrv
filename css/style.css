@@ -30,24 +30,24 @@ body {
   width: 100%;
   background-color: #fffef9;
   position: fixed;
-  z-index: 100;
   justify-content: space-between;
   display: flex; }
   .header-container-menu {
     display: none; }
     @media (min-width: 1024px) {
       .header-container-menu {
-        display: block;
+        display: flex;
+        justify-content: center;
         width: 100%;
         color: #895dda;
-        font-family: 'ubuntuMedium';
-        margin-left: 38%; } }
+        font-family: 'ubuntubold'; } }
     .header-container-menu-text {
       display: flex;
+      justify-content: center;
       width: 100%;
       margin-top: 27px;
       font-size: 14px;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
       color: black;
       width: 70%; }
       .header-container-menu-text-link {
@@ -87,16 +87,12 @@ body {
       width: 45px;
       height: 45px; }
   .header-container-burger {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     margin: 22.5px auto;
-    background-color: red; }
-    @media (min-width: 768px) {
-      .header-container-burger {
-        background-color: black; } }
+    border: 5px solid #895dda; }
     @media (min-width: 1024px) {
       .header-container-burger {
-        background-color: pink;
         display: none; } }
     .header-container-burger-modal {
       display: none;
@@ -274,73 +270,59 @@ body {
         width: 100%;
         z-index: 1; } }
     .about-container-up-title {
-      text-align: center;
-      font-family: 'ubuntubold';
-      color: #895dda;
-      width: 100%;
+      border-right: 7px solid #895dda;
       position: relative;
       bottom: 0;
-      top: -15px;
-      font-size: 48px;
-      z-index: 2000;
-      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.17); }
+      height: 20px;
+      top: -40px;
+      width: 50%;
+      z-index: 2000; }
       @media (min-width: 1024px) {
         .about-container-up-title {
-          font-size: 60px;
           z-index: 2000; } }
   .about-container-content {
     position: absolute;
-    height: 880px;
+    height: 110vh;
     box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.09);
     background-color: #fffef9;
     width: 100%;
-    margin-top: 300px;
-    opacity: 1;
+    margin-top: 50vh;
     z-index: 1000; }
     @media (min-width: 1024px) {
       .about-container-content {
-        margin-top: 500px;
+        margin-top: 90vh;
         z-index: 3;
-        height: 1040px; } }
+        height: 165vh; } }
     .about-container-content-presentation {
       margin: 0 auto;
       line-height: 120%;
-      width: 60%;
+      width: 90%;
       padding-top: 70px; }
       @media (min-width: 1024px) {
         .about-container-content-presentation {
           width: 50%;
           padding-top: 100px; } }
       .about-container-content-presentation-first {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 140%;
         font-family: 'ubuntulight'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-first {
-            font-size: 30px;
+            font-size: 24px;
             line-height: 140%; } }
         .about-container-content-presentation-first-underline {
           cursor: pointer;
-          text-decoration: underline black;
           transition: all 0.1s ease-out; }
-          .about-container-content-presentation-first-underline:hover {
-            text-decoration: underline #895dda; }
         .about-container-content-presentation-first-italic {
           font-family: 'ubuntuitalic'; }
-        .about-container-content-presentation-first-italic2 {
-          font-family: 'ubuntuitalic';
-          font-size: 18px; }
-          @media (min-width: 1024px) {
-            .about-container-content-presentation-first-italic2 {
-              font-size: 20px; } }
       .about-container-content-presentation-second {
         padding-top: 30px;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 130%;
         font-family: 'ubuntulight'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-second {
-            font-size: 30px; } }
+            font-size: 24px; } }
         .about-container-content-presentation-second-hetic {
           font-family: 'ubunturegular'; }
         .about-container-content-presentation-second-profile {
@@ -357,23 +339,23 @@ body {
   height: 900px;
   position: absolute;
   box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
-  background-color: #fffef9;
+  background-color: #fffefa;
   width: 100%;
-  margin: 100px auto 0;
+  margin: auto 0;
   z-index: 10;
-  margin-top: 300px; }
+  margin-top: 50vh; }
   @media (min-width: 1024px) {
     .about-container-content2 {
-      height: 1400px;
-      margin-top: 500px; } }
+      height: 2200px;
+      margin-top: 90vh; } }
   .about-container-content2-presentation {
     margin: 0 auto;
-    width: 65%;
-    padding-top: 70px; }
+    width: 90%;
+    padding-top: 5vh; }
     @media (min-width: 1024px) {
       .about-container-content2-presentation {
         width: 50%;
-        padding-top: 200px; } }
+        padding-top: 100px; } }
     .about-container-content2-presentation-title {
       font-family: 'ubunturegular';
       font-size: 30px;
@@ -385,20 +367,18 @@ body {
     .about-container-content2-presentation-works {
       line-height: 120%;
       font-family: 'ubuntulight';
-      font-size: 24px; }
+      font-size: 20px; }
       @media (min-width: 1024px) {
         .about-container-content2-presentation-works {
-          font-size: 30px; } }
+          font-size: 24px; } }
     .about-container-content2-presentation-projects {
       width: 100%;
       margin-top: 50px;
-      flex-wrap: wrap;
-      display: flex; }
+      display: block; }
       .about-container-content2-presentation-projects-link {
         background-color: #895dda;
-        width: 100%;
         height: auto;
-        margin-top: 10px; }
+        margin: 50px auto; }
         @media (min-width: 1024px) {
           .about-container-content2-presentation-projects-link {
             width: 50%; } }
@@ -411,57 +391,10 @@ body {
           opacity: 0.8;
           transform: scale(0.9); }
 
-.tabs {
-  width: 100%;
-  margin: auto;
-  border: 1px solid #000; }
-
-.tabs-nav {
-  font-family: 'ubuntulight';
-  display: flex;
-  width: 100%;
-  margin: 100px auto;
-  font-size: 20px; }
-  @media (min-width: 1024px) {
-    .tabs-nav {
-      width: 80%;
-      font-size: 24px; } }
-
-.tabs-nav a {
-  color: #000;
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
-  letter-spacing: -1.5px;
-  overflow: hidden;
-  align-items: center;
-  height: 60px;
-  font-size: 24px;
-  line-height: 40px;
-  background-color: #e6e6e6; }
-
-.tabs-nav a:hover {
-  color: white;
-  transition: all 0.2s ease-out;
-  background-color: #895dda; }
-
-.tabs-nav a.is-active {
-  color: white;
-  font-family: 'ubunturegular';
-  background: #895dda; }
-
-.tabs-content {
-  display: none; }
-
-.tabs-content.is-active {
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap; }
-
 .about-container-content-presentation-contact {
   display: block;
   padding-top: 100px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   font-family: 'ubunturegular'; }
   @media (min-width: 1024px) {
@@ -476,10 +409,10 @@ body {
         font-size: 28px; } }
     .about-container-content-presentation-contact-first-info {
       font-family: 'ubunturegular';
-      font-size: 24px; }
+      font-size: 20px; }
       @media (min-width: 1024px) {
         .about-container-content-presentation-contact-first-info {
-          font-size: 30px; } }
+          font-size: 28px; } }
 
 .about-container-content-contact {
   position: absolute;
@@ -487,8 +420,8 @@ body {
   box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
   background-color: #fffef9;
   width: 100%;
-  margin-top: 300px;
+  margin-top: 95vh;
   z-index: 1000; }
   @media (min-width: 1024px) {
     .about-container-content-contact {
-      margin-top: 500px; } }
+      margin-top: 90vh; } }

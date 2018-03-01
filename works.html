@@ -55,20 +55,16 @@
       </span>
       </div>
     </div>
-    <div class="about-container-content2" id="content">
-      <p class="about-container-up-title" id="title">WORKS</p>
+    <div class="about-container-content2">
+      <p class="about-container-up-title" ></p>
       <div class="about-container-content2-presentation">
         <p class="about-container-content2-presentation-works">I try to create things, not only in UX / UI design it can photography or Minecraft, when i just : </p>
       </div>
-      <nav class="tabs-nav ">
-        <a href="#page1" class="is-active ">UX / UI</a>
-        <a href="#page2">3d </a>
-        <a href="#page3">Other</a>
-      </nav>
       <div class="tabs-contents">
-        <article id="page1" class="tabs-content is-active">
+        <article id="page1" class="tabs-content">
           <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/homepage1.png" class="about-container-content2-presentation-projects-img" alt=""></a>
+            <a href="#" class=""><img src="img/homepage1.png" class="about-container-content2-presentation-projects-img" alt="">
+            </a>
           </div>
           <div class="about-container-content2-presentation-projects-link">
             <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
@@ -78,21 +74,6 @@
           </div>
           <div class="about-container-content2-presentation-projects-link">
             <a href="#" class=""><img src="img/redesign.png" class="about-container-content2-presentation-projects-img" alt=""></a>
-          </div>
-        </article>
-
-        <article id="page2" class="tabs-content">
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/egypte.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
-          </div>
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/sciende.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
-          </div>
-        </article>
-
-        <article id="page3" class="tabs-content">
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
           </div>
         </article>
 
@@ -133,9 +114,9 @@
             href = href.replace('#', '');
 
             if (href === content[a].getAttribute('id')) {
-              content[a].classList.add('is-active');
+              content[a].classList.add('active');
             } else {
-              content[a].classList.remove('is-active');
+              content[a].classList.remove('active');
             }
           }
 
@@ -143,28 +124,30 @@
       }
 
       /// PARRALAX
-      window.requestAnimationFrame = window.requestAnimationFrame
-      || window.mozRequestAnimationFrame
-      || window.webkitRequestAnimationFrame
-      || window.msRequestAnimationFrame
-      || function(f){setTimeout(f, 1000/60)}
+      window.requestAnimationFrame = window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(f) {
+          setTimeout(f, 1000 / 60)
+        }
 
       var bubble5 = document.getElementById('content')
       var bubble6 = document.getElementById('title')
 
-      var rand6 = 15;
+      var rand6 = 10;
 
-      function parallaxbubbles(){
+      function parallaxbubbles() {
 
-      var scrolltop = window.pageYOffset
+        var scrolltop = window.pageYOffset
 
 
-      bubble6.style.top = -scrolltop*rand6/100 + 'px'
+        bubble6.style.top = -scrolltop * rand6 / 100 + 'px'
 
       }
 
-      window.addEventListener('scroll', function(){
-      requestAnimationFrame(parallaxbubbles)
+      window.addEventListener('scroll', function() {
+        requestAnimationFrame(parallaxbubbles)
       }, false)
     </script>
 </body>

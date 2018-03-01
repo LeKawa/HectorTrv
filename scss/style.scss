@@ -48,7 +48,6 @@ body {
   width: 100%;
   background-color: $background_color;
   position: fixed;
-  z-index: 100;
   justify-content: space-between;
   display: flex;
   @include tablet {}
@@ -59,19 +58,21 @@ body {
   &-menu {
     display: none;
     @include desktop {
-      display: block;
+      display: flex;
+      justify-content: center;
       width: 100%;
       color: #895dda;
-      font-family: 'ubuntuMedium';
-      margin-left: 38%;
+      font-family: 'ubuntubold';
+
     }
 
     &-text {
       display: flex;
+      justify-content: center;
       width: 100%;
       margin-top: 27px;
       font-size: 14px;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
       color: black;
       width: 70%;
       @include desktop {}
@@ -131,15 +132,14 @@ body {
   }
 
   &-burger {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     margin: 22.5px auto;
-    background-color: red;
+    border: 5px solid #895dda;
     @include tablet {
-      background-color: black;
+
     }
     @include desktop {
-      background-color: pink;
       display: none;
     }
 
@@ -373,18 +373,15 @@ body {
     }
 
     &-title {
-      text-align: center;
-      font-family: 'ubuntubold';
-      color: #895dda;
-      width: 100%;
+
+      border-right: 7px solid #895dda;
       position: relative;
       bottom: 0;
-      top: -15px;
-      font-size: 48px;
+      height: 20px;
+      top: -40px;
+      width: 50%;
       z-index: 2000;
-      text-shadow: 0 5px 2px rgba(150, 150, 150, 0.17);
       @include desktop {
-        font-size: 60px;
         z-index: 2000;
       }
     }
@@ -392,23 +389,22 @@ body {
 
   &-content {
     position: absolute;
-    height: 880px;
+    height: 110vh;
     box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.09);
     background-color: $background_color;
     width: 100%;
-    margin-top: 300px;
-    opacity: 1;
+    margin-top: 50vh;
     z-index: 1000;
     @include desktop {
-      margin-top: 500px;
+      margin-top: 90vh;
       z-index: 3;
-      height: 1040px;
+      height: 165vh;
     }
 
     &-presentation {
       margin: 0 auto;
       line-height: 120%;
-      width: 60%;
+      width: 90%;
       padding-top: 70px;
       @include desktop {
         width: 50%;
@@ -416,44 +412,34 @@ body {
       }
 
       &-first {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 140%;
         font-family: 'ubuntulight';
         @include desktop {
-          font-size: 30px;
+          font-size: 24px;
           line-height: 140%;
         }
 
         &-underline {
           cursor: pointer;
-          text-decoration: underline black;
           transition: all 0.1s ease-out;
 
           &:hover {
-            text-decoration: underline #895dda;
           }
         }
 
         &-italic {
           font-family: 'ubuntuitalic';
         }
-
-        &-italic2 {
-          font-family: 'ubuntuitalic';
-          font-size: 18px;
-          @include desktop {
-            font-size: 20px;
-          }
-        }
       }
 
       &-second {
         padding-top: 30px;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 130%;
         font-family: 'ubuntulight';
         @include desktop {
-          font-size: 30px;
+          font-size: 24px;
         }
 
         &-hetic {
@@ -474,29 +460,31 @@ body {
     }
   }
 }
+
+
 // works
 
 .about-container-content2 {
   height: 900px;
   position: absolute;
   box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
-  background-color: $background_color;
+  background-color:rgba(255, 254, 250, 1);
   width: 100%;
-  margin: 100px auto 0;
+  margin: auto 0;
   z-index: 10;
-  margin-top: 300px;
+  margin-top: 50vh;
   @include desktop {
-    height: 1400px;
-    margin-top: 500px;
+    height:2200px;
+    margin-top: 90vh;
   }
 
   &-presentation {
     margin: 0 auto;
-    width: 65%;
-    padding-top: 70px;
+    width: 90%;
+    padding-top: 5vh;
     @include desktop {
       width: 50%;
-      padding-top: 200px;
+      padding-top:100px;
     }
 
     &-title {
@@ -512,23 +500,21 @@ body {
     &-works {
       line-height: 120%;
       font-family: 'ubuntulight';
-      font-size: 24px;
+      font-size: 20px;
       @include desktop {
-        font-size: 30px;
+        font-size: 24px;
       }
     }
 
     &-projects {
       width: 100%;
       margin-top: 50px;
-      flex-wrap: wrap;
-      display: flex;
+      display: block;
 
       &-link {
         background-color: #895dda;
-        width: 100%;
         height: auto;
-        margin-top: 10px;
+        margin: 50px auto;
         @include desktop {
           width: 50%;
         }
@@ -549,65 +535,13 @@ body {
   }
 }
 
-.tabs {
-  width: 100%;
-  margin: auto;
-  border: 1px solid #000;
-}
 
-.tabs-nav {
-  font-family: 'ubuntulight';
-  display: flex;
-  width: 100%;
-  margin: 100px auto;
-  font-size: 20px;
-  @include desktop {
-    width: 80%;
-    font-size: 24px;
-  }
-}
-
-.tabs-nav a {
-  color: #000;
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
-  letter-spacing: -1.5px;
-  overflow: hidden;
-  align-items: center;
-  height: 60px;
-  font-size: 24px;
-  line-height: 40px;
-  background-color: #e6e6e6;
-}
-
-.tabs-nav a:hover {
-  color: white;
-  transition: all 0.2s ease-out;
-  background-color: #895dda;
-}
-
-.tabs-nav a.is-active {
-  color: white;
-  font-family: 'ubunturegular';
-  background: #895dda;
-}
-
-.tabs-content {
-  display: none;
-}
-
-.tabs-content.is-active {
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-}
 //contact
 
 .about-container-content-presentation-contact {
   display: block;
   padding-top: 100px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   font-family: 'ubunturegular';
   @include desktop {
@@ -624,9 +558,9 @@ body {
 
     &-info {
       font-family: 'ubunturegular';
-      font-size: 24px;
+      font-size: 20px;
       @include desktop {
-        font-size: 30px;
+        font-size: 28px;
       }
     }
   }
@@ -638,9 +572,9 @@ body {
   box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
   background-color: $background_color;
   width: 100%;
-  margin-top: 300px;
+  margin-top: 95vh;
   z-index: 1000;
   @include desktop {
-    margin-top: 500px;
+    margin-top: 90vh;
   }
 }
