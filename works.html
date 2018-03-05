@@ -21,17 +21,17 @@
         <div class="header-container-burger-modal-content">
           <div class="header-container-burger-modal-content-link">
             <a href="about.html">
-              <p>ABOUT</p>
+              <p class="header-container-burger-modal-content-link-position">ABOUT</p>
             </a>
           </div>
           <div class="header-container-burger-modal-content-link">
             <a href="works.html">
-              <p>WORKS</p>
+              <p class="header-container-burger-modal-content-link-position" >WORKS</p>
             </a>
           </div>
           <div class="header-container-burger-modal-content-link">
             <a href="contact.html">
-              <p>CONTACT</p>
+              <p class="header-container-burger-modal-content-link-position">CONTACT</p>
             </a>
           </div>
         </div>
@@ -55,28 +55,25 @@
       </span>
       </div>
     </div>
-    <div class="about-container-content2">
-      <p class="about-container-up-title" ></p>
-      <div class="about-container-content2-presentation">
-        <p class="about-container-content2-presentation-works">I try to create things, not only in UX / UI design it can photography or Minecraft, when i just : </p>
+    <div class="about-container-work">
+      <p class="about-container-up-title">scroll</p>
+      <div class="about-container-work-presentation">
+        <p class="about-container-work-presentation-works">Voici mes projets que j'ai réalisé... </p>
       </div>
       <div class="tabs-contents">
-        <article id="page1" class="tabs-content">
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/homepage1.png" class="about-container-content2-presentation-projects-img" alt="">
+          <div class="about-container-work-presentation-projects-link">
+            <a href="#" class=""><img src="img/homepage1.png" class="about-container-work-presentation-projects-img" alt="">
             </a>
           </div>
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          <div class="about-container-work-presentation-projects-link">
+            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-work-presentation-projects-img" alt=""></a>
           </div>
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-content2-presentation-projects-img" alt=""></a>
+          <div class="about-container-work-presentation-projects-link">
+            <a href="#" class=""><img src="img/florajet.jpg" class="about-container-work-presentation-projects-img" alt=""></a>
           </div>
-          <div class="about-container-content2-presentation-projects-link">
-            <a href="#" class=""><img src="img/redesign.png" class="about-container-content2-presentation-projects-img" alt=""></a>
+          <div class="about-container-work-presentation-projects-link">
+            <a href="#" class=""><img src="img/redesign.png" class="about-container-work-presentation-projects-img" alt=""></a>
           </div>
-        </article>
-
 
       </div>
     </div>
@@ -94,34 +91,6 @@
 
         modal.style.display = '';
       });
-      /// ONGLETS
-      var tab = document.querySelectorAll('.tabs-nav a');
-      var content = document.querySelectorAll('.tabs-content');
-
-      for (var i = 0; i < tab.length; i++) {
-        tab[i].addEventListener('click', function() {
-
-          for (var a = 0; a < tab.length; a++) {
-            if (tab[a] === this) {
-              this.classList.add('is-active');
-            } else {
-              tab[a].classList.remove('is-active');
-            }
-          }
-
-          for (var a = 0; a < content.length; a++) {
-            var href = this.getAttribute('href');
-            href = href.replace('#', '');
-
-            if (href === content[a].getAttribute('id')) {
-              content[a].classList.add('active');
-            } else {
-              content[a].classList.remove('active');
-            }
-          }
-
-        });
-      }
 
       /// PARRALAX
       window.requestAnimationFrame = window.requestAnimationFrame ||

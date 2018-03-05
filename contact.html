@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="icon" href="img/vrailogo.png" />
+  <!--
+  The following 3 meta tags *must* come first in the <head>
+  to consistently ensure proper document rendering.
+  Any other head element should come *after* these tags.
+-->
   <title>Hector Travaillé</title>
 </head>
 
@@ -22,17 +27,17 @@
         <div class="header-container-burger-modal-content">
           <div class="header-container-burger-modal-content-link">
             <a href="about.html">
-              <p>ABOUT</p>
+              <p class="header-container-burger-modal-content-link-position">ABOUT</p>
             </a>
           </div>
           <div class="header-container-burger-modal-content-link">
             <a href="works.html">
-              <p>WORKS</p>
+              <p class="header-container-burger-modal-content-link-position">WORKS</p>
             </a>
           </div>
           <div class="header-container-burger-modal-content-link">
             <a href="contact.html">
-              <p>CONTACT</p>
+              <p class="header-container-burger-modal-content-link-position">CONTACT</p>
             </a>
           </div>
         </div>
@@ -56,7 +61,7 @@
       </div>
     </div>
     <div class="about-container-content-contact">
-      <p class="about-container-up-title"></p>
+      <p class="about-container-up-title">scroll</p>
       <div class="about-container-content-presentation-contact">
         <p class="about-container-content-presentation-contact-first">
           <span class="about-container-content-presentation-contact-first-info">Email :</span> professionnal.hector@gmail.com
@@ -71,43 +76,18 @@
 
   <script>
     //burger function / modal
-    var btn = document.querySelector('.header-container-burger-button');
-    var modal = document.querySelector('.header-container-burger-modal');
-    var overlay = document.querySelector('.header-container-burger-modal-overlay');
+      var btn = document.querySelector('.header-container-burger-button');
+      var modal = document.querySelector('.header-container-burger-modal');
+      var overlay = document.querySelector('.header-container-burger-modal-overlay');
 
-    btn.addEventListener('click', function() {
-      modal.style.display = 'block';
-    });
+      btn.addEventListener('click', function() {
+        modal.style.display = 'block';
+      });
 
-    overlay.addEventListener('click', function() {
+      overlay.addEventListener('click', function() {
 
-      modal.style.display = '';
-    });
+        modal.style.display = '';
+      });
 
-    //Parralax
-    /// PARRALAX
-    window.requestAnimationFrame = window.requestAnimationFrame
-    || window.mozRequestAnimationFrame
-    || window.webkitRequestAnimationFrame
-    || window.msRequestAnimationFrame
-    || function(f){setTimeout(f, 1000/60)}
-
-    var bubble5 = document.getElementById('content')
-    var bubble6 = document.getElementById('title')
-
-    var rand6 = 15;
-
-    function parallaxbubbles(){
-
-    var scrolltop = window.pageYOffset
-
-
-    bubble6.style.top = -scrolltop*rand6/100 + 'px'
-
-    }
-
-    window.addEventListener('scroll', function(){
-    requestAnimationFrame(parallaxbubbles)
-    }, false)
   </script>
 </body>

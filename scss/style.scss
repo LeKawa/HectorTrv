@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'robotoregular';
+  src: url("../font/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: 'robotomedium';
+  src: url("../font/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: 'robotolight';
+  src: url("../font/Roboto-Light.ttf");
+}
+@font-face {
   font-family: 'ubunturegular';
   src: url("../font/Ubuntu-Regular.ttf");
 }
@@ -11,6 +23,7 @@
   src: url("../font/Ubuntu-Light.ttf");
 }
 @font-face {
+
   font-family: 'ubuntuMedium';
   src: url("../font/Ubuntu-Medium.ttf");
 }
@@ -63,14 +76,13 @@ body {
       width: 100%;
       color: #895dda;
       font-family: 'ubuntubold';
-
     }
 
     &-text {
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-top: 27px;
+      margin-top: 14px;
       font-size: 14px;
       letter-spacing: -1px;
       color: black;
@@ -79,6 +91,7 @@ body {
 
       &-link {
         overflow: hidden;
+        font-size: 14px;
       }
 
       &-link {
@@ -134,11 +147,10 @@ body {
   &-burger {
     width: 40px;
     height: 40px;
+    border-radius: 4px 4px;
     margin: 22.5px auto;
     border: 5px solid #895dda;
-    @include tablet {
-
-    }
+    @include tablet {}
     @include desktop {
       display: none;
     }
@@ -162,10 +174,10 @@ body {
       }
 
       &-content {
-        width: 300px;
+        width: 200px;
         position: relative;
         height: 50vh;
-        margin: 100px auto;
+        margin: 25vh auto;
         z-index: 100000000;
         font-family: 'ubuntuMedium';
         text-align: center;
@@ -174,6 +186,9 @@ body {
         &-link {
           margin-top: 30px;
           margin-bottom: 10px;
+          &-position{
+            padding-top: 6vh;
+          }
         }
       }
     }
@@ -360,7 +375,6 @@ body {
 
 .about-container {
   width: 100%;
-  height: 100vh;
   z-index: 1;
   background-color: $background_color;
 
@@ -373,23 +387,23 @@ body {
     }
 
     &-title {
-
-      border-right: 7px solid #895dda;
+      text-align: center;
       position: relative;
       bottom: 0;
-      height: 20px;
+      color: #895dda;
+      font-family: 'ubunturegular';
       top: -40px;
-      width: 50%;
+      opacity: 0;
+      width: 100%;
       z-index: 2000;
       @include desktop {
-        z-index: 2000;
+        opacity: 1;
       }
     }
   }
 
   &-content {
     position: absolute;
-    height: 110vh;
     box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.09);
     background-color: $background_color;
     width: 100%;
@@ -398,7 +412,6 @@ body {
     @include desktop {
       margin-top: 90vh;
       z-index: 3;
-      height: 165vh;
     }
 
     &-presentation {
@@ -417,15 +430,13 @@ body {
         font-family: 'ubuntulight';
         @include desktop {
           font-size: 24px;
-          line-height: 140%;
         }
 
         &-underline {
           cursor: pointer;
           transition: all 0.1s ease-out;
 
-          &:hover {
-          }
+          &:hover {}
         }
 
         &-italic {
@@ -460,21 +471,18 @@ body {
     }
   }
 }
-
-
 // works
-
-.about-container-content2 {
-  height: 900px;
+.about-container-work {
+  height: 200vh;
   position: absolute;
   box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
-  background-color:rgba(255, 254, 250, 1);
+  background-color: $background_color;
   width: 100%;
   margin: auto 0;
   z-index: 10;
   margin-top: 50vh;
   @include desktop {
-    height:2200px;
+    height: 315vh;
     margin-top: 90vh;
   }
 
@@ -484,7 +492,7 @@ body {
     padding-top: 5vh;
     @include desktop {
       width: 50%;
-      padding-top:100px;
+      padding-top: 10vh;
     }
 
     &-title {
@@ -534,10 +542,7 @@ body {
     }
   }
 }
-
-
 //contact
-
 .about-container-content-presentation-contact {
   display: block;
   padding-top: 100px;
@@ -572,7 +577,7 @@ body {
   box-shadow: 0 -7px 45px 0 rgba(0,0,0,0.11);
   background-color: $background_color;
   width: 100%;
-  margin-top: 95vh;
+  margin-top: 50vh;
   z-index: 1000;
   @include desktop {
     margin-top: 90vh;

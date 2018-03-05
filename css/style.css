@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'robotoregular';
+  src: url("../font/Roboto-Regular.ttf"); }
+
+@font-face {
+  font-family: 'robotomedium';
+  src: url("../font/Roboto-Bold.ttf"); }
+
+@font-face {
+  font-family: 'robotolight';
+  src: url("../font/Roboto-Light.ttf"); }
+
+@font-face {
   font-family: 'ubunturegular';
   src: url("../font/Ubuntu-Regular.ttf"); }
 
@@ -45,13 +57,14 @@ body {
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-top: 27px;
+      margin-top: 14px;
       font-size: 14px;
       letter-spacing: -1px;
       color: black;
       width: 70%; }
       .header-container-menu-text-link {
-        overflow: hidden; }
+        overflow: hidden;
+        font-size: 14px; }
       .header-container-menu-text-link {
         transition: color 0.3s ease-out; }
         .header-container-menu-text-link::after {
@@ -89,6 +102,7 @@ body {
   .header-container-burger {
     width: 40px;
     height: 40px;
+    border-radius: 4px 4px;
     margin: 22.5px auto;
     border: 5px solid #895dda; }
     @media (min-width: 1024px) {
@@ -110,10 +124,10 @@ body {
         height: 100%;
         background: rgba(0, 0, 0, 0.4); }
       .header-container-burger-modal-content {
-        width: 300px;
+        width: 200px;
         position: relative;
         height: 50vh;
-        margin: 100px auto;
+        margin: 25vh auto;
         z-index: 100000000;
         font-family: 'ubuntuMedium';
         text-align: center;
@@ -121,6 +135,8 @@ body {
         .header-container-burger-modal-content-link {
           margin-top: 30px;
           margin-bottom: 10px; }
+          .header-container-burger-modal-content-link-position {
+            padding-top: 6vh; }
     .header-container-burger-button {
       width: 45px;
       height: 45px; }
@@ -259,7 +275,6 @@ body {
 
 .about-container {
   width: 100%;
-  height: 100vh;
   z-index: 1;
   background-color: #fffef9; }
   .about-container-up {
@@ -270,19 +285,20 @@ body {
         width: 100%;
         z-index: 1; } }
     .about-container-up-title {
-      border-right: 7px solid #895dda;
+      text-align: center;
       position: relative;
       bottom: 0;
-      height: 20px;
+      color: #895dda;
+      font-family: 'ubunturegular';
       top: -40px;
-      width: 50%;
+      opacity: 0;
+      width: 100%;
       z-index: 2000; }
       @media (min-width: 1024px) {
         .about-container-up-title {
-          z-index: 2000; } }
+          opacity: 1; } }
   .about-container-content {
     position: absolute;
-    height: 110vh;
     box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.09);
     background-color: #fffef9;
     width: 100%;
@@ -291,8 +307,7 @@ body {
     @media (min-width: 1024px) {
       .about-container-content {
         margin-top: 90vh;
-        z-index: 3;
-        height: 165vh; } }
+        z-index: 3; } }
     .about-container-content-presentation {
       margin: 0 auto;
       line-height: 120%;
@@ -308,8 +323,7 @@ body {
         font-family: 'ubuntulight'; }
         @media (min-width: 1024px) {
           .about-container-content-presentation-first {
-            font-size: 24px;
-            line-height: 140%; } }
+            font-size: 24px; } }
         .about-container-content-presentation-first-underline {
           cursor: pointer;
           transition: all 0.1s ease-out; }
@@ -335,59 +349,59 @@ body {
               padding-top: 40px;
               margin-left: 15%; } }
 
-.about-container-content2 {
-  height: 900px;
+.about-container-work {
+  height: 200vh;
   position: absolute;
   box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
-  background-color: #fffefa;
+  background-color: #fffef9;
   width: 100%;
   margin: auto 0;
   z-index: 10;
   margin-top: 50vh; }
   @media (min-width: 1024px) {
-    .about-container-content2 {
-      height: 2200px;
+    .about-container-work {
+      height: 315vh;
       margin-top: 90vh; } }
-  .about-container-content2-presentation {
+  .about-container-work-presentation {
     margin: 0 auto;
     width: 90%;
     padding-top: 5vh; }
     @media (min-width: 1024px) {
-      .about-container-content2-presentation {
+      .about-container-work-presentation {
         width: 50%;
-        padding-top: 100px; } }
-    .about-container-content2-presentation-title {
+        padding-top: 10vh; } }
+    .about-container-work-presentation-title {
       font-family: 'ubunturegular';
       font-size: 30px;
       text-align: center;
       margin-top: 30px; }
       @media (min-width: 1024px) {
-        .about-container-content2-presentation-title {
+        .about-container-work-presentation-title {
           font-size: 36px; } }
-    .about-container-content2-presentation-works {
+    .about-container-work-presentation-works {
       line-height: 120%;
       font-family: 'ubuntulight';
       font-size: 20px; }
       @media (min-width: 1024px) {
-        .about-container-content2-presentation-works {
+        .about-container-work-presentation-works {
           font-size: 24px; } }
-    .about-container-content2-presentation-projects {
+    .about-container-work-presentation-projects {
       width: 100%;
       margin-top: 50px;
       display: block; }
-      .about-container-content2-presentation-projects-link {
+      .about-container-work-presentation-projects-link {
         background-color: #895dda;
         height: auto;
         margin: 50px auto; }
         @media (min-width: 1024px) {
-          .about-container-content2-presentation-projects-link {
+          .about-container-work-presentation-projects-link {
             width: 50%; } }
-      .about-container-content2-presentation-projects-img {
+      .about-container-work-presentation-projects-img {
         width: 100%;
         height: auto;
         box-shadow: 0 10px 33px 0 rgba(0, 0, 0, 0.53);
         transition: all 0.2s ease-out; }
-        .about-container-content2-presentation-projects-img:hover {
+        .about-container-work-presentation-projects-img:hover {
           opacity: 0.8;
           transform: scale(0.9); }
 
@@ -420,7 +434,7 @@ body {
   box-shadow: 0 -7px 45px 0 rgba(0, 0, 0, 0.11);
   background-color: #fffef9;
   width: 100%;
-  margin-top: 95vh;
+  margin-top: 50vh;
   z-index: 1000; }
   @media (min-width: 1024px) {
     .about-container-content-contact {
